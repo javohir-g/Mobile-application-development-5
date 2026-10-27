@@ -26,6 +26,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.sideeffectslab.task1.SplashTaskScreen
+import com.example.sideeffectslab.task2.OTHER_ROUTE
+import com.example.sideeffectslab.task2.OtherScreen
+import com.example.sideeffectslab.task2.SnackbarTaskScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,6 +53,7 @@ private const val HOME_ROUTE = "home"
 
 val labScreens: List<LabScreen> = listOf(
     LabScreen(route = "task1", title = "1. Splash screen") { SplashTaskScreen() },
+    LabScreen(route = "task2", title = "2. Snackbar button") { nav -> SnackbarTaskScreen(onOpenOtherScreen = { nav.navigate(OTHER_ROUTE) }) },
 )
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -78,6 +82,7 @@ fun LabApp() {
             modifier = Modifier.padding(padding),
         ) {
             composable(HOME_ROUTE) { HomeScreen(navController) }
+            composable(OTHER_ROUTE) { OtherScreen() } // task2
             labScreens.forEach { screen ->
                 composable(screen.route) { screen.content(navController) }
             }
