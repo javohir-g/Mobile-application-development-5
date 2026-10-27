@@ -31,6 +31,7 @@ import com.example.sideeffectslab.task2.OtherScreen
 import com.example.sideeffectslab.task2.SnackbarTaskScreen
 import com.example.sideeffectslab.task3.LifecycleTaskScreen
 import com.example.sideeffectslab.task4.SideEffectTaskScreen
+import com.example.sideeffectslab.task5.ScrollTaskScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,6 +59,7 @@ val labScreens: List<LabScreen> = listOf(
     LabScreen(route = "task2", title = "2. Snackbar button") { nav -> SnackbarTaskScreen(onOpenOtherScreen = { nav.navigate(OTHER_ROUTE) }) },
     LabScreen(route = "task3", title = "3. Lifecycle logger") { LifecycleTaskScreen() },
     LabScreen(route = "task4", title = "4. SideEffect and analytics") { SideEffectTaskScreen() },
+    LabScreen(route = "task5", title = "5. Scroll: derivedStateOf and snapshotFlow") { ScrollTaskScreen() },
 )
 
 @OptIn(ExperimentalMaterial3Api::class)
