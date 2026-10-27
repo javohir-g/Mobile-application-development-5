@@ -29,6 +29,7 @@ import com.example.sideeffectslab.task1.SplashTaskScreen
 import com.example.sideeffectslab.task2.OTHER_ROUTE
 import com.example.sideeffectslab.task2.OtherScreen
 import com.example.sideeffectslab.task2.SnackbarTaskScreen
+import com.example.sideeffectslab.task3.LifecycleTaskScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,6 +55,7 @@ private const val HOME_ROUTE = "home"
 val labScreens: List<LabScreen> = listOf(
     LabScreen(route = "task1", title = "1. Splash screen") { SplashTaskScreen() },
     LabScreen(route = "task2", title = "2. Snackbar button") { nav -> SnackbarTaskScreen(onOpenOtherScreen = { nav.navigate(OTHER_ROUTE) }) },
+    LabScreen(route = "task3", title = "3. Lifecycle logger") { LifecycleTaskScreen() },
 )
 
 @OptIn(ExperimentalMaterial3Api::class)
