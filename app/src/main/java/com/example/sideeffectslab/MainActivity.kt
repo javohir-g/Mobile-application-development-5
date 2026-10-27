@@ -25,6 +25,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.sideeffectslab.task1.SplashTaskScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,6 +49,7 @@ data class LabScreen(
 private const val HOME_ROUTE = "home"
 
 val labScreens: List<LabScreen> = listOf(
+    LabScreen(route = "task1", title = "1. Splash screen") { SplashTaskScreen() },
 )
 
 @OptIn(ExperimentalMaterial3Api::class)
